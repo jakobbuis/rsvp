@@ -3,17 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Event;
-use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class EventController extends Controller
 {
-    public function index()
+    public function show(Event $event): View
     {
-        //
-    }
-
-    public function store(Request $request)
-    {
-        //
+        return view('events.show', ['event' => $event]);
     }
 }

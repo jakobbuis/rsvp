@@ -2,8 +2,6 @@
 
 use App\Models\Event;
 
-use function Pest\Laravel\withoutExceptionHandling;
-
 it('allows an user to register for an event', function () {
     $event = Event::factory()->create();
 

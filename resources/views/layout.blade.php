@@ -8,7 +8,23 @@
 
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="antialiased">
-        @yield('content')
+    <body>
+        <header>
+            <div class="container mx-auto">
+                <div class="flex py-6 px-12 justify-between items-center">
+                    <div class="flex items-center">
+                        <img src="/images/logo.png" alt="" class="align-baseline h-12">
+                        <h1 class="text-4xl ml-2">RSVP</h1>
+                    </div>
+                    <menu class="align-end">
+                        <a href="#">Sign in</a>
+                    </menu>
+                </div>
+            </div>
+        </header>
+
+        <main>
+           @yield('content')
+        </main>
     </body>
 </html>

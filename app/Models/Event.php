@@ -14,8 +14,28 @@ class Event extends Model
     use GeneratesUuid;
     use BindsOnUuid;
 
+    protected $casts = [
+        'start' => 'datetime',
+        'end' => 'datetime',
+    ];
+
     public function registrations(): HasMany
     {
         return $this->hasMany(Registration::class);
+    }
+
+    public function getTimespanAttribute(): string
+    {
+        $full = 'DD MMMM YYYY HH:mm';
+
+        if (!$this->end) {
+            return $this->start->isoFormat($full);
+        }
+
+        if ($this->start->isSameDay($this->end)) {
+            return $this->start->isoFormat($full) . ' — ' . $this->end->isoFormat('HH:mm');
+        }
+
+        return $this->start->isoFormat($full) . ' — ' . $this->end->isoFormat($full);
     }
 }

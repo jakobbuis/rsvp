@@ -14,8 +14,8 @@ class EventFactory extends Factory
         return [
             'title' => $this->faker->sentence(),
             'description' => $this->faker->paragraph(),
-            'start' => $this->faker->dateTime(),
-            'end' => $this->faker->dateTime(),
+            'start' => $this->faker->dateTimeThisMonth(),
+            'end' => $this->faker->dateTimeThisMonth(),
         ];
     }
 }

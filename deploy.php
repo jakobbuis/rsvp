@@ -16,7 +16,7 @@ host('jakobbuis.nl')
 task('build:frontend', function () {
     within('{{release_path}}', function () {
         run('npm install');
-        run('npm run production');
+        run('npm run build');
     });
 });
 before('deploy:publish', 'build:frontend');

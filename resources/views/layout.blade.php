@@ -7,6 +7,7 @@
         <title>@yield('title') -- RVSP</title>
 
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+        @livewireStyles
     </head>
     <body>
         <header>
@@ -26,5 +27,7 @@
         <main>
            @yield('content')
         </main>
+
+        @livewireScripts
     </body>
 </html>

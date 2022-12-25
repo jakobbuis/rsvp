@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Livewire\RegistrationForm;
 use App\Models\Event;
+use Livewire\Livewire;
 
 it('allows an user to view an event details', function () {
     $event = Event::factory()->create();
@@ -14,8 +16,10 @@ it('allows an user to view an event details', function () {
 it('allows an user to register for an event', function () {
     $event = Event::factory()->create();
 
-    $this->postJson(route('registrations.store', $event->uuid), ['name' => 'Hans'])
-        ->assertNoContent();
+    Livewire::test(RegistrationForm::class)
+        ->set('event', $event)
+        ->set('name', 'Hans')
+        ->call('register');
 
     expect($event->registrations)->toHaveCount(1)
         ->first()->name->toBe('Hans');

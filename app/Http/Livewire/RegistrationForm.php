@@ -1,0 +1,36 @@
+<?php
+
+namespace App\Http\Livewire;
+
+use App\Models\Event;
+use Livewire\Component;
+
+class RegistrationForm extends Component
+{
+    public Event $event;
+    public string $name;
+
+    protected $rules = [
+        'name' => ['required', 'string', 'min:1'],
+    ];
+
+    protected $messages = [
+        'name.required' => 'Je moet een naam invullen',
+        'name.string' => 'Je naam moet tekst zijn',
+        'name.min' => 'Je naam moet tenminste één karakter bevatten',
+    ];
+
+    public function render()
+    {
+        return view('livewire.registration-form');
+    }
+
+    public function register()
+    {
+        $this->validate();
+
+        $this->event->registrations()->create(['name' => $this->name]);
+
+        session()->flash('registered', true);
+    }
+}

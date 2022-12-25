@@ -19,24 +19,7 @@
                     {!! $event->description !!}
                 </main>
                 <aside class="w-72">
-                    <div class="bg-blue-100 p-4 rounded-lg shadow-md">
-                        <h3 class="font-bold mb-2">RSVP</h3>
-                        <form action="{{ route('registrations.store', $event->uuid) }}" method="POST" id="registrations-create">
-                            @csrf
-                            <p>
-                                <input type="text" id="name" name="name" class="text-lg rounded-md p-2 mb-2 border-2 w-full" placeholder="Jouw naam">
-                                <button type="submit" class="text-lg p-2 rounded-md border-1 border-blue-900 bg-blue-300 w-full inline-block">RSVP</button>
-                            </p>
-                        </form>
-
-                        <div class="bg-white border-l-8 p-2 border-red-500 bg-red-100 mt-4 hidden" id="errors">
-                            Je moet een naam opgeven.
-                        </div>
-
-                        <div class="bg-white border-l-8 p-2 border-green-500 bg-green-100 mt-4 hidden" id="success">
-                            Aangemeld!
-                        </div>
-                    </div>
+                    <livewire:registration-form :event="$event" />
                 </aside>
             </div>
         </div>

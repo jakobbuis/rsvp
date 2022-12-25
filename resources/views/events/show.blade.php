@@ -18,13 +18,13 @@
                 <main class="flex-auto text-xl mr-8 prose prose-lg">
                     {!! $event->description !!}
                 </main>
-                <aside class="w-96">
+                <aside class="w-72">
                     <div class="bg-blue-100 p-4 rounded-lg shadow-md">
                         <h3 class="font-bold mb-2">RSVP</h3>
                         <form action="{{ route('registrations.store', $event->uuid) }}" method="POST" id="registrations-create">
                             @csrf
                             <p>
-                                <input type="text" id="name" name="name" class="text-lg rounded-md p-2 mb-2 border-2" placeholder="Jouw naam">
+                                <input type="text" id="name" name="name" class="text-lg rounded-md p-2 mb-2 border-2 w-full" placeholder="Jouw naam">
                                 <button type="submit" class="text-lg p-2 rounded-md border-1 border-blue-900 bg-blue-300 w-full inline-block">RSVP</button>
                             </p>
                         </form>

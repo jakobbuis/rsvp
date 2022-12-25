@@ -17,7 +17,7 @@
                         <h1 class="text-4xl ml-2">RSVP</h1>
                     </div>
                     <menu class="align-end">
-                        <a href="#">Sign in</a>
+                        <a href="#" id="sign-in">Sign in</a>
                     </menu>
                 </div>
             </div>

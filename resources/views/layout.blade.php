@@ -10,7 +10,7 @@
     </head>
     <body>
         <header>
-            <div class="container mx-auto">
+            <div class="container">
                 <div class="flex py-6 px-12 justify-between items-center">
                     <div class="flex items-center">
                         <img src="/images/logo.png" alt="" class="align-baseline h-12">

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Dyrynda\Database\Support\BindsOnUuid;
 use Dyrynda\Database\Support\GeneratesUuid;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -45,5 +46,14 @@ class Event extends Model
         }
 
         return $this->start->isoFormat($full) . ' — ' . $this->end->isoFormat($full);
+    }
+
+    public function openForRegistrations(): bool
+    {
+        if (!$this->registration_closes) {
+            return true;
+        }
+
+        return Carbon::now() < $this->registration_closes;
     }
 }

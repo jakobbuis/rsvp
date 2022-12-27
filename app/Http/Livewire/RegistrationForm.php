@@ -30,7 +30,7 @@ class RegistrationForm extends Component
     {
         $this->validate();
 
-        if ($this->event->registration_closes && $this->event->registration_closes <= Carbon::now()) {
+        if (!$this->event->openForRegistrations()) {
             session()->flash('deadline-passed', true);
         } else {
             $this->event->registrations()->create(['name' => $this->name]);

@@ -35,7 +35,8 @@ class RegistrationForm extends Component
         } else {
             $this->event->registrations()->create(['name' => $this->name]);
             $this->emit('registered', $this->name);
-            session()->flash('registered', true);
+            session()->flash('registered', $this->name);
+            $this->name = '';
         }
     }
 }

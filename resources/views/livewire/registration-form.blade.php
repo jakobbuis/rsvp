@@ -41,7 +41,7 @@
 
     @if (session()->has('registered'))
         <div class="bg-white border-l-8 p-2 border-green-500 bg-green-100 mt-4">
-            Aangemeld!
+            {{ session()->get('registered') }} aangemeld
         </div>
     @endif
 

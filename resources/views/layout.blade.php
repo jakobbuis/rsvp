@@ -9,7 +9,7 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         @livewireStyles
     </head>
-    <body>
+    <body class="bg-gray-50">
         <header>
             <div class="container">
                 <div class="flex py-6 px-12 justify-between items-center">

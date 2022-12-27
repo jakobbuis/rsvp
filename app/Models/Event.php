@@ -18,11 +18,13 @@ class Event extends Model
     protected $casts = [
         'start' => 'datetime',
         'end' => 'datetime',
+        'registration_closes' => 'datetime',
+        'registrations_public' => 'boolean',
     ];
 
     public function registrations(): HasMany
     {
-        return $this->hasMany(Registration::class);
+        return $this->hasMany(Registration::class)->orderBy('name', 'asc');
     }
 
     public function user(): BelongsTo

@@ -1,4 +1,4 @@
-<div class="bg-blue-100 p-4 rounded-lg shadow-md">
+<div class="bg-blue-100 p-4 rounded-lg shadow-md mb-4">
     <h3 class="font-bold mb-2">RSVP</h3>
     <form wire:submit.prevent="register">
         <p>

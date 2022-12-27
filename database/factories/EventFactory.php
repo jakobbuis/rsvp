@@ -18,6 +18,10 @@ class EventFactory extends Factory
             'description' => $this->faker->paragraph(),
             'start' => $this->faker->dateTimeThisMonth(),
             'end' => $this->faker->dateTimeThisMonth(),
+            'address' => $this->faker->address(),
+            'max_registrations' => null,
+            'registrations_public' => $this->faker->boolean(),
+            'registrations_closes' => null,
         ];
     }
 }

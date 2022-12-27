@@ -19,7 +19,7 @@ task('build:frontend', function () {
         run('npm run build');
     });
 });
-before('deploy:publish', 'build:frontend');
+after('deploy:vendors', 'build:frontend');
 
 // Always migrate on deployment
 before('deploy:symlink', 'artisan:migrate');

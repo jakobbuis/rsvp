@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\Event;
+use Carbon\Carbon;
 use Livewire\Component;
 
 class RegistrationForm extends Component
@@ -29,8 +30,11 @@ class RegistrationForm extends Component
     {
         $this->validate();
 
-        $this->event->registrations()->create(['name' => $this->name]);
-
-        session()->flash('registered', true);
+        if ($this->event->registration_closes && $this->event->registration_closes <= Carbon::now()) {
+            session()->flash('deadline-passed', true);
+        } else {
+            $this->event->registrations()->create(['name' => $this->name]);
+            session()->flash('registered', true);
+        }
     }
 }

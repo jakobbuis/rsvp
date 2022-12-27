@@ -22,4 +22,10 @@
             Aangemeld!
         </div>
     @endif
+
+    @if (session()->has('deadline-passed'))
+        <div class="bg-white border-l-8 p-2 border-red-500 bg-red-100 mt-4">
+            Je kunt je niet meer aanmelden.
+        </div>
+    @endif
 </div>

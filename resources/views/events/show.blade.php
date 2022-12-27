@@ -14,11 +14,11 @@
 
     <div class="bg-gray-50">
         <div class="container px-12 py-6">
-            <div class="flex">
-                <main class="flex-auto text-xl mr-8 prose prose-lg">
+            <div class="flex flex-col lg:flex-row">
+                <main class="flex-auto text-xl mr-8 prose prose-lg mb-8">
                     {!! $event->description !!}
                 </main>
-                <aside class="w-96">
+                <aside class="w-96 shrink-0">
                     @livewire('registration-form', ['event' => $event])
                     @livewire('event-details', ['event' => $event])
                     @if ($event->registrations_public)

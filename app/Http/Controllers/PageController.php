@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\View;
+use Illuminate\View\View;
 
 class PageController extends Controller
 {
-    public function __invoke()
+    public function __invoke(): View
     {
         return view('pages.'.Route::currentRouteName());
     }

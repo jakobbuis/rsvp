@@ -21,7 +21,7 @@ class EventFactory extends Factory
             'address' => $this->faker->address(),
             'max_registrations' => null,
             'registrations_public' => $this->faker->boolean(),
-            'registrations_closes' => null,
+            'registration_closes' => null,
         ];
     }
 }

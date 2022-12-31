@@ -50,12 +50,14 @@ class Event extends Model
 
     public function openForRegistrations(): bool
     {
-        if ($this->registration_closes === null && $this->max_registrations === null) {
-            return true;
+        if ($this->registration_closes && Carbon::now() > $this->registration_closes) {
+            return false;
         }
 
-        $isBeforeDeadline = (Carbon::now() < $this->registration_closes);
-        $capacityLeft = $this->registrations->count() < $this->max_registrations;
-        return $isBeforeDeadline && $capacityLeft;
+        if ($this->max_registrations && $this->registrations->count() >= $this->max_registrations) {
+            return false;
+        }
+
+        return true;
     }
 }

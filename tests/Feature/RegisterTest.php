@@ -2,6 +2,7 @@
 
 use App\Http\Livewire\RegistrationForm;
 use App\Models\Event;
+use Carbon\Carbon;
 use Livewire\Livewire;
 
 it('allows an user to view an event details', function () {
@@ -16,8 +17,7 @@ it('allows an user to view an event details', function () {
 it('allows an user to register for an event', function () {
     $event = Event::factory()->create();
 
-    Livewire::test(RegistrationForm::class)
-        ->set('event', $event)
+    Livewire::test(RegistrationForm::class, ['event' => $event])
         ->set('name', 'Hans')
         ->call('register');
 

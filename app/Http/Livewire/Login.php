@@ -27,9 +27,10 @@ class Login extends Component
     public function send()
     {
         $this->validate();
-
-        Mail::to($this->email)->send(new LoginLinkEmail($this->email));
-
         session()->flash('login_email_sent', true);
+
+        dispatch(function () {
+            Mail::to($this->email)->send(new LoginLinkEmail($this->email));
+        })->afterResponse();
     }
 }

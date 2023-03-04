@@ -7,7 +7,7 @@ Gebruik de button hieronder om je aan te melden in RSVP. Als je nog geen account
 Login bij RSVP
 </x-mail::button>
 
-Deze link is 15 minuten geldig en verloopt op {{ $validUntil->toTimeString() }}.
+Deze link is 15 minuten geldig en verloopt om {{ $validUntil->toTimeString() }}.
 
 Thanks,<br>
 RSVP

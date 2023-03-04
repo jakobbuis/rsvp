@@ -10,7 +10,7 @@ class DashboardController extends Controller
     public function __invoke(): View
     {
         if (Auth::check()) {
-            return view('dashboard', ['events' => Auth::user()->events]);
+            return view('dashboard', ['events' => Auth::user()->events()->orderBy('start', 'desc')->get()]);
         } else {
             return view('dashboard');
         }

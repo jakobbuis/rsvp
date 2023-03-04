@@ -24,12 +24,7 @@
                     @endguest
 
                     @auth
-                        <div class="bg-blue-100 shadow-inner">
-                            <div class="container px-12 py-24">
-                                <h1 class="text-6xl">Your events</h1>
-                            </div>
-                        </div>
-
+                        <h1 class="font-bold text-4xl">Mijn events</h1>
                         <table class="table-auto mt-8 w-full">
                             <thead class="bg-gray-200"><tr>
                                 <th class="p-2 text-left">Datum</th>
@@ -41,7 +36,7 @@
                                     <tr>
                                         <td class="p-2">{{ $event->start->format('d-m-Y') }}</td>
                                         <td class="p-2">
-                                            <a href="{{ route('events.show', $event->uuid)}}">
+                                            <a class="text-blue-700 hover:underline" href="{{ route('events.show', $event->uuid)}}">
                                                 {{ $event->title }}
                                             </a>
                                         </td>

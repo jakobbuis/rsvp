@@ -9,6 +9,7 @@
             <div class="flex flex-col lg:flex-row">
                 <main class="flex-auto text-xl mr-8 mb-8">
                     <h1 class="font-bold text-4xl">Mijn events</h1>
+
                     <table class="table-auto mt-8 w-full">
                         <thead class="bg-gray-200"><tr>
                             <th class="p-2 text-left">Datum</th>
@@ -16,6 +17,11 @@
                             <th class="p-2 text-center">Aanmeldingen</th>
                         </tr></thead>
                         <tbody>
+                            @if ($events->count() == 0)
+                                <tr>
+                                    <td colspan="3" class="p-2 italic">Je hebt nog geen events</td>
+                                </tr>
+                            @endif
                             @foreach ($events as $event)
                                 <tr>
                                     <td class="p-2">{{ $event->start->format('d-m-Y') }}</td>

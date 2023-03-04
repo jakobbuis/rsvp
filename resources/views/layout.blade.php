@@ -18,9 +18,10 @@
                         <h1 class="text-4xl ml-2">RSVP</h1>
                     </div>
                     <menu class="align-end">
+                        <a href="{{ route('dashboard' )}}">Mijn events</a> |
                         @auth
                             Logged in as {{ Auth::user()->email }}
-                            | <a href="{{ route('logout' )}}" class="hover:underline text-blue-700">Log out</a>
+                            | <a href="{{ route('logout' )}}">Log out</a>
                         @endauth
 
                         @guest

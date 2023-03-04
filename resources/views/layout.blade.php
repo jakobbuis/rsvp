@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>@yield('title') -- RVSP</title>
+        <title>@yield('title') &ndash; RVSP</title>
 
         @vite(['resources/css/app.css'])
         @livewireStyles

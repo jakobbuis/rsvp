@@ -1,13 +1,13 @@
 <form wire:submit.prevent="send" class="bg-blue-100 p-8">
     @guest
-        <label for="email" class="font-bold mb-2 block">Sign in using a link via e-mail:</label>
+        <label for="email" class="font-bold mb-2 block">Login met een e-mail link:</label>
         <input
             type="email"
             name="email"
             placeholder="yourname@example.com"
             wire:model="email"
             class="p-2 rounded-md w-96">
-        <button type="submit" class="border bg-green-500 p-2 px-4 rounded-md hover:underline">Send link</button>
+        <button type="submit" class="border bg-green-500 p-2 px-4 rounded-md hover:underline">Link versturen</button>
     @endguest
 
     @auth

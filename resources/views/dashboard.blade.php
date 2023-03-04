@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title', 'Dashboard')
+@section('title', 'Welkom')
 
 @section('content')
 
@@ -9,14 +9,14 @@
             <div class="flex flex-col lg:flex-row">
                 <main class="flex-auto text-xl mr-8 mb-8">
                     <p class="mb-8">
-                        Welcome to RSVP, a simple tool to gather RSVPs for your event. Sign up using the link to create your event.
+                        Welcome op RSVP, een simpele manier om RSVPs te verzamelen voor jouw event. Gebruik de e-mail link om te starten.
                     </p>
 
                     @livewire('login')
 
                     <p class="my-8">
                         <h2 class="font-bold">Privacy</h2>
-                        We don't give your data to anyone else, unless required by law.
+                        We geven je data aan niemand, tenzij dat wettelijk verplicht is.
                     </p>
                 </main>
             </div>

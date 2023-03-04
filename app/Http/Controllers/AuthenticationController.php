@@ -18,8 +18,7 @@ class AuthenticationController extends Controller
         $user = User::firstOrCreate(['email' => $request->email], ['email_verified_at' => now()]);
         Auth::login($user);
 
-        return redirect()->route('dashboard')
-            ->with('global.message', 'Ingelogd');
+        return redirect()->route('events.index');
     }
 
     public function logout(): RedirectResponse

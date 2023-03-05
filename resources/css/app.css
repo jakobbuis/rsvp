@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.form label {
+    @apply font-bold block pb-2;
+}
+
+.form .input {
+    @apply border border-b-slate-50 rounded-md p-2 w-full;
+}
+
+.button {
+    @apply border bg-green-500 p-2 px-4 rounded-md hover:underline;
+}

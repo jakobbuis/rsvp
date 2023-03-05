@@ -10,7 +10,7 @@ Route::get('login', [AuthenticationController::class, 'login'])->name('login');
 Route::get('logout', [AuthenticationController::class, 'logout'])->name('logout');
 
 Route::middleware('auth')->group(function () {
-    Route::get('events', [EventsController::class, 'index'])->name('events.index');
+    Route::resource('events', EventsController::class)->only(['index', 'create', 'store']);
 });
 
 Route::get('events/{event}', [EventsController::class, 'show'])->name('events.show');

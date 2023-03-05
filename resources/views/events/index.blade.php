@@ -8,7 +8,11 @@
         <div class="container px-12 py-6">
             <div class="flex flex-col lg:flex-row">
                 <main class="flex-auto text-xl mr-8 mb-8">
-                    <h1 class="font-bold text-4xl">Mijn events</h1>
+                    <div class="flex justify-between">
+                        <h1 class="font-bold text-4xl">Mijn events</h1>
+                        <a href="{{ route('events.create') }}"
+                            class="button">Nieuw event</a>
+                    </div>
 
                     <table class="table-auto mt-8 w-full">
                         <thead class="bg-gray-200"><tr>

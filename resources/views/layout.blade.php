@@ -23,7 +23,7 @@
                             |
                             <a class="text-blue-700 hover:underline" href="{{ route('events.index' )}}">Mijn events</a>
                             |
-                            <a class="text-blue-700 hover:underline" href="{{ route('logout' )}}">Log out</a>
+                            <a class="text-blue-700 hover:underline" href="{{ route('logout' )}}">Uitloggen</a>
                         @endauth
 
                         @guest

@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class AuthenticationController extends Controller
 {
@@ -15,7 +16,10 @@ class AuthenticationController extends Controller
             abort(401);
         }
 
-        $user = User::firstOrCreate(['email' => $request->email], ['email_verified_at' => now()]);
+        $user = User::firstOrNew(['email' => $request->email]);
+        $user->email_verified_at = now();
+        $user->name = Str::of($user->email)->before('@')->headline();
+        $user->save();
         Auth::login($user);
 
         return redirect()->route('events.index');

@@ -24,6 +24,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Model::preventSilentlyDiscardingAttributes($this->app->isLocal());
+        Model::unguard();
     }
 }

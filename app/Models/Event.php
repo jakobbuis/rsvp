@@ -28,9 +28,9 @@ class Event extends Model
         return $this->hasMany(Registration::class)->orderBy('name', 'asc');
     }
 
-    public function user(): BelongsTo
+    public function owner(): BelongsTo
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id');
     }
 
     public function getTimespanAttribute(): string

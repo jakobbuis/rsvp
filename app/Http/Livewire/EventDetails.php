@@ -11,6 +11,7 @@ class EventDetails extends Component
 
     protected $listeners = [
         'registered',
+        'deregistered',
     ];
 
     public function render()
@@ -19,6 +20,11 @@ class EventDetails extends Component
     }
 
     public function registered(): void
+    {
+        $this->event = $this->event->fresh();
+    }
+
+    public function deregistered(): void
     {
         $this->event = $this->event->fresh();
     }

@@ -7,7 +7,7 @@
         <div class="container px-12 py-6">
             <h1 class="text-6xl">{{ $event->title }}</h1>
             <p class="text-xl mt-2">
-                {{ $event->timespan }}. Georganiseerd door {{ $event->user->name }}.
+                {{ $event->timespan }}. Georganiseerd door {{ $event->owner->name }}.
             </p>
         </div>
     </div>

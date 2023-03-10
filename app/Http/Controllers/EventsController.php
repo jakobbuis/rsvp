@@ -40,7 +40,7 @@ class EventsController extends Controller
         ]);
 
         $event = new Event($data);
-        $event->user()->associate(Auth::user());
+        $event->owner()->associate(Auth::user());
         $event->save();
 
         return redirect()->route('events.show', $event->uuid);

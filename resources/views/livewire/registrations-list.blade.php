@@ -6,7 +6,7 @@
             <li class="flex justify-between">
                 <span>{{ $registration->name }}</span>
 
-                @if ($event->owner->is(Auth::user()))
+                @if (Auth::check() && $registration->canBeDeletedBy(Auth::user()))
                     <button wire:click="remove({{ $registration->id }})">
                         {{-- trash --}}
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">

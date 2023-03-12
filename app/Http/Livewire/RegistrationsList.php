@@ -27,11 +27,15 @@ class RegistrationsList extends Component
 
     public function remove(int $id): void
     {
-        if (!$this->event->owner->is(Auth::user())) {
-            abort(403);
+        if (!Auth::check()) {
+            abort(401, 'Je moet inloggen om deze functie te kunnen gebruiken');
         }
 
         $registration = Registration::findOrFail($id);
+        if (!$registration->canBeDeletedBy(Auth::user())) {
+            abort(403, 'Je mag deze aanmelding niet aanpassen');
+        }
+
         $name = $registration->name;
         $registration->delete();
         $this->event->load('registrations');

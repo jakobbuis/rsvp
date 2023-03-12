@@ -13,9 +13,7 @@
     @auth
         <p class="mb-4">Je bent ingelogd als {{ Auth::user()->email }}.</p>
         <p>
-            <a class="text-blue-700 hover:underline" href="{{ route('events.index')}}">Mijn events</a>
-            |
-            <a class="text-blue-700 hover:underline" href="{{ route('logout') }}">Uitloggen</a>
+            @include('_menu')
         </p>
     @endauth
 
